@@ -1,13 +1,13 @@
 # Avoid recursive Git mess
-**/.git/
-**/obj/
-**/bin/
-**/target/
-**/node_modules/
-**/__pycache__/
-**/.venv/
+**/.git
+**/obj
+**/bin
+**/target
+**/node_modules
+**/__pycache__
+**/.venv
 **/.env
-**/dist/
+**/dist
 **/.ipynb_checkpoints
 
 Photos/
@@ -21,7 +21,6 @@ vosk-model*
 test
 chadsh
 
-Assembly/
 Git/
 FastApi/
 vshell/
