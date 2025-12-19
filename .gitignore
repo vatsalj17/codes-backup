@@ -15,6 +15,7 @@
 **/.env
 **/vosk-model*
 **/dist/
+**/.ipynb_checkpoints
 Photos/
 Faces/
 stubs/
