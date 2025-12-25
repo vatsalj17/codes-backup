@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "bt.h"
 
 treenode* node_init(int value) {
@@ -23,6 +24,24 @@ int height(treenode* root, int level) {
     int left = height(root->left, level + 1);
     int right = height(root->right, level + 1);
     return (left > right)? left: right;
+}
+
+int balanced(treenode* root, int level, bool *state) {
+    if (root == NULL) return level;
+    int left = balanced(root->left, level + 1, state);
+    int right = balanced(root->right, level + 1, state);
+    int diff = left - right;
+    if (diff < -1 || diff > 1) *state = false;
+    return (left > right)? left: right;
+}
+
+int diameter(treenode* root, int* max) {
+    if (root == NULL) return 0;
+    int left = diameter(root->left, max);
+    int right = diameter(root->right, max);
+    int sum = left + right;
+    if (sum >= *max) *max = sum;
+    return 1 + ((left > right)? left: right);
 }
 
 void printtabs(int numtabs) {

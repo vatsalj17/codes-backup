@@ -57,12 +57,27 @@ struct ListNode* reverseListLoop(struct ListNode* head) {
 	return new;
 }
 
+// khud se kiya hua
+struct ListNode* rev(struct ListNode* head) {
+    typedef struct ListNode list;
+    list* prev = NULL;
+    list* curr = head;
+    list* next = NULL;
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
 
 int main(void) {
 	node_t** nodes = inputList();
 	node_t* head = nodes[0];
 	printf("Loading the output...\n");
-	node_t* new_head = reverseList(head);
+	node_t* new_head = rev(head);
 	printf("The list: ");
 	printList(new_head);
 }

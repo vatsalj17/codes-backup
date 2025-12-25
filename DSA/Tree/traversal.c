@@ -50,25 +50,25 @@ void preorder_itr(treenode* root, int* pre, int* i) {
 	stack_destroy(s);
 }
 
-void inorder_itr(treenode* root, int* pre, int* i) {
-    if (root == NULL) {
-        return;
-    }
-    printf("got here");
-    stack_t* s = stack_init(10, sizeof(treenode*));
-    push(s, &root);
-    while (!stack_empty(s)) {
-        root = *(treenode**)stack_top(s);
-        if (root->left != NULL)
-            push(s, &root->left);
-        else {
-            push(s, &root->right);
-            root = *(treenode**)stack_top(s);
-            pop(s);
-            pre[(*i)++] = root->value;
-        }
-    }
-    stack_destroy(s);
+void inorder_itr(treenode* root, int* in, int* i) {
+	if (root == NULL) {
+		return;
+	}
+	stack_t* s = stack_init(10, sizeof(treenode*));
+	treenode* node = root;
+	while (true) {
+		if (node != NULL) {
+			push(s, &node);
+			node = node->left;
+		} else {
+			if (stack_empty(s)) break;
+			node = *(treenode**)stack_top(s);
+			pop(s);
+			in[(*i)++] = node->value;
+			node = node->right;
+		}
+	}
+	stack_destroy(s);
 }
 
 int* dfs_traverse(treenode* root, int* return_size, traversal fun) {
@@ -143,7 +143,7 @@ int main(void) {
 	n7->right = n9;
 
 	int n;
-	int* arr = dfs_traverse(n1, &n, preorder);
+	int* arr = dfs_traverse(n1, &n, preorder_itr);
 	printf("Preorder: ");
 	for (int i = 0; i < n; i++) {
 		printf("%d ", arr[i]);
