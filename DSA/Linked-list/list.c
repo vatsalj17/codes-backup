@@ -26,7 +26,7 @@ void insertAtHead(node_t** head, int value) {
 
 void insertAtTail(node_t** tail, int value) {
     node_t* new = createNode(value);
-    (*tail)->next = new;
+    if (*tail != NULL) (*tail)->next = new;
     *tail = new;
 }
 

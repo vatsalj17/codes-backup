@@ -10,6 +10,12 @@ class Node {
 	Node(int x, Node* next) : val(x), next(next) {}
 };
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+
 void printList(Node* head);
 void insertAtHead(Node*& head, int value);
 void insertAtTail(Node*& tail, int value);
