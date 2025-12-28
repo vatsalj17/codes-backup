@@ -1,4 +1,4 @@
-#include "../mystd.h"
+#include "../utils/mystd.hpp"
 #include <cctype>
 
 bool check(string s) {

@@ -1,13 +1,13 @@
 #ifndef BT_H
 #define BT_H
 
-typedef struct Node {
+typedef struct TreeNode {
     int value;
-    struct Node* left;
-    struct Node* right;
+    struct TreeNode* left;
+    struct TreeNode* right;
 } treenode;
 
-treenode* node_init(int value);
+treenode* tree_node_init(int value);
 int height(treenode* root, int level);
 void printtree(treenode* root);
 int count_nodes(treenode* root);

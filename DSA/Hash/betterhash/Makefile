@@ -2,7 +2,7 @@ CC=gcc
 
 CFLAGS=-Wall -g
 LIB=libhashtable
-BINS=$(LIB).so $(LIB).a test
+BINS=$(LIB).so $(LIB).a test test2
 
 all: $(BINS)
 

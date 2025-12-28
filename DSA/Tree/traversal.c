@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../library/src/queue.h"
-#include "../library/src/stack.h"
+#include "../generics/queue.h"
+#include "../generics/stack.h"
 #include "bt.h"
 
 typedef void (*traversal)(treenode*, int*, int*);
@@ -124,15 +124,15 @@ int** bfs(treenode* root, int* return_size, int** returnCols_size) {
 }
 
 int main(void) {
-	treenode* n1 = node_init(1);
-	treenode* n2 = node_init(2);
-	treenode* n3 = node_init(3);
-	treenode* n4 = node_init(4);
-	treenode* n5 = node_init(5);
-	treenode* n6 = node_init(6);
-	treenode* n7 = node_init(7);
-	treenode* n8 = node_init(8);
-	treenode* n9 = node_init(9);
+	treenode* n1 = tree_node_init(1);
+	treenode* n2 = tree_node_init(2);
+	treenode* n3 = tree_node_init(3);
+	treenode* n4 = tree_node_init(4);
+	treenode* n5 = tree_node_init(5);
+	treenode* n6 = tree_node_init(6);
+	treenode* n7 = tree_node_init(7);
+	treenode* n8 = tree_node_init(8);
+	treenode* n9 = tree_node_init(9);
 	n1->left = n2;
 	n1->right = n3;
 	n2->left = n4;

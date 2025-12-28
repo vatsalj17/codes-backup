@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "bt.h"
 
-treenode* node_init(int value) {
+treenode* tree_node_init(int value) {
     treenode* new = malloc(sizeof(treenode));
     if (new == NULL) return NULL;
     new->left = NULL;

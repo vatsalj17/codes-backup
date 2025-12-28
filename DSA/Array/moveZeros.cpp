@@ -14,11 +14,12 @@ int main(void) {
 	// for (int i = 0; i < n; i++) nums[i] = ans[i];
 
 	int idx = -1;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++) {
 		if (nums[i] == 0) {
 			idx = i;
 			break;
 		}
+    }
 	if (idx != -1) {
 		for (int i = idx + 1; i < n; i++)
 			if (nums[i] != 0) swap(nums[idx++], nums[i]);
