@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
 years = [2006 + x for x in range (16)]
