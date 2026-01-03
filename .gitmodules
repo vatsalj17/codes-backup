@@ -22,3 +22,6 @@
 [submodule "DevOps/Git/webflyx"]
     path = DevOps/Git/webflyx
     url = git@github.com:Vatsalj17/webflyx.git
+[submodule "Python/Projects/sysmonitor"]
+	path = Python/Projects/sysmonitor
+	url = git@github.com:vatsalj17/sysmonitor.git
