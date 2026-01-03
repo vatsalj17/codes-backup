@@ -173,6 +173,5 @@ int main(void) {
 	}
 	for (int i = 0; i < rows; i++) free(sol[i]);
 	free(sol);
-
 	destroy_tree(n1);
 }
